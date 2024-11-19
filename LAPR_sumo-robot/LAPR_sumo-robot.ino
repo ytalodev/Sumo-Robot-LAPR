@@ -11,6 +11,7 @@ public:
         pinMode(pin2, OUTPUT);
     }
 
+
     void Speed(int in1)
     {
         spd = in1;
@@ -66,7 +67,7 @@ void loop()
     Motor1.Forward();
     Motor2.Forward();
 
-    if (distancia <= 12.0)
+    if (distancia <= 30.0)
     {
         Motor1.Forward();
         Motor2.Forward();
@@ -119,12 +120,12 @@ int lerLuz(int pino)
     delay(10);
     if (estadoSensor)
     {
-        Serial.println("PRETO");
+        //Serial.println("PRETO");
         return 0;
     }
     else
     {
-        Serial.println("BRANCO");
+        //Serial.println("BRANCO");
         return 1;
     }
 }
@@ -142,3 +143,4 @@ void girarDireita()
     Motor2.Backward();
     delay(1000);
 }
+
